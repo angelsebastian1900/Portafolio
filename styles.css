@@ -31,7 +31,7 @@ header{
         text-align: center;
         font-weight: 500;
     }
- 
+   
 }
 /* ********************************************************** */
 
@@ -40,74 +40,105 @@ header{
 
 /* *********************Nav style******************************/
 nav{
-    background-color: rgb(0, 195, 255);
-    position: relative;
-    .div1{
-        height: 50px;
+    box-shadow: 0px 0px 10px 1px rgb(55, 61, 62) ;
+   
+    div{
+        background-color: rgb(3, 187, 243);
         display: flex;
-        align-items: center;
-        flex-direction: row;
-        position: relative;
+        justify-content: space-between;
         
-        span{
-            font-size: 1rem;
-        }
-
+        
         a{
+            display: flex;
+            align-items: center;
             text-decoration: none;
             color: #111;
             transition: color .3s ease-in-out;
+            img{
+                margin: .5rem;
+            }
 
             &:hover{
                 color: #fff;
             }
         }
+    
         button{
-            position: absolute;
-            right: 1rem;
-            height: 30px;
+            
+            height: auto;
             width: 50px;
             border: none;
             border-radius: 30px;
             color: white;
-            background-color: rgb(40, 39, 39);
+            background-color: transparent;
             font-size: 1.4rem;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all .4s ease-in;
-
-            &:hover{
-                background-color: rgb(99, 99, 99);
-            }
-        }
+        } 
+        
     }
-    .navigation-menu{
+    &.open button{
+        /* &.open (open es una clase dentro del nav) y cambia de color si la clase no esta 
+        remuevela con JS */
+        background-color: rgb(48, 49, 49);
+        color: white;
+    }
+
+
+    ul{
         position: absolute;
+        margin: 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: auto;
         width: 100%;
-        z-index: 1;
+        max-height: 0;
         background-color: rgb(0, 195, 255);
-        a{
+        overflow: hidden;
+        transition: max-height .3s ease;
+      
+        li{
             padding: 5px 0;
             text-decoration: none;
-            color: white;
-            transition: all .3s ease;
             width: 100%;
             text-align: center;
+            transition: all .4s ease;
+            a {
+                text-decoration: none;
+                color: white;
+                transition: all .4s ease;
+            }
         }
-        a:hover {
+        li:hover{
             background-color: white;
-            color: #111;
+            cursor: pointer;
+            &:hover a{
+                color: #111;
+            }
+
         }
+    }
+    &.open ul{
+        max-height: 150px;/*max-height necesario para que aparezca el menu de navegacion
+        al quitar o remover la clase*/
+    }
+
+    .navbar-fixed {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
     }
     
 }
+
+
    
 .small-logo{
     border-radius: 50%;
@@ -191,7 +222,7 @@ section{
                 content: url("assets/img/icons/zoom.svg");
                 position: absolute;
                 width: 150px;
-                top: 10px;
+                top: 0;
                 opacity: 0;
                 transition: all .5s ease-in-out;
             }    
