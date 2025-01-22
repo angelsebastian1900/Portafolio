@@ -177,7 +177,7 @@ section{
     }
 
     div{
-        width: 400px;
+        width: 320px;
         margin: 20px;
         height: auto;
         position: relative;
@@ -266,6 +266,7 @@ section{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 8% ;
+        margin: 0 5%;
 
         div{
             position: relative;
