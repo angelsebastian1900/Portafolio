@@ -296,17 +296,20 @@ section{
                 color: rgb(255, 255, 255);
                 background-color: rgba(0, 0, 0, 0.812);             
                 z-index: 1;
-                div{
-                    background-color: rgba(0, 0, 0, 0.812);
-                    height: 7px;
-                    width: 7px;
+                &:after{
+                    content: "";
                     position: absolute;
-                    bottom: -2px;
-                    transform:rotate(45deg);
-                    z-index: -1;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: rgba(0,0,0,0.75) transparent transparent transparent;
                 } 
+            }
+                
             } 
-        }
+            
         div img{
             width: 80%;
             height: auto;
