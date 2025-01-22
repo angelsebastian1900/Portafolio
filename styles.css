@@ -163,7 +163,7 @@ section{
     align-items: center;
     justify-content: center;
     margin-top: 40px;
-
+    
     h3{
         font-size: 30px;
         margin: 20px;
@@ -177,7 +177,7 @@ section{
     }
 
     div{
-        width: 300px;
+        width: 400px;
         margin: 20px;
         height: auto;
         position: relative;
@@ -194,6 +194,7 @@ section{
             display: flex;
             align-items: end;
             justify-content: center;
+            cursor: zoom-in;
 
             img{
                 width: 100%;
@@ -221,7 +222,7 @@ section{
             &:after{
                 content: url("assets/img/icons/zoom.svg");
                 position: absolute;
-                width: 150px;
+                width: 130px;
                 top: 0;
                 opacity: 0;
                 transition: all .5s ease-in-out;
@@ -288,6 +289,7 @@ section{
                 align-items: center;
                 justify-content: center;
                 cursor: context-menu;
+                pointer-events: none; /*convierte el evento en fantasma por lo que no puede ser seleccionado*/
                 transition: all .4s ease-in-out;
             }
             &:hover span{
@@ -345,16 +347,16 @@ section{
         border-radius: 30px;
         padding: 40px;
         margin: 5%;
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
         transition: all .3s ease;
+        cursor: pointer;
         img{
-            width: 100%;
-
+            width: 100%;  
         }
 
         h4{
